@@ -10,8 +10,8 @@ import { NewsletterService } from './services/newsletter.service';
 })
 export class AppComponent implements OnInit {
   title = 'angular-web-push';
-   readonly VAPID_PUBLIC_KEY = "BAQX81ABUEV-Dpr7-APcNW93jhIAPikBIi_wvveP_fTEASvqAFUPg-vczGIm3IYGMMSi8vjMWPylXy-ShZ3TxgY";
- //  readonly VAPID_PUBLIC_KEY = "BH96yDe1Z47dMcoLQ5Ysq5QQz-eJwBawmun3yjUF7xk7nTvkLMasWkeT94Qk59JrLN_emQrTPdV6MOjeK7sF00o";
+  // readonly VAPID_PUBLIC_KEY = "BAQX81ABUEV-Dpr7-APcNW93jhIAPikBIi_wvveP_fTEASvqAFUPg-vczGIm3IYGMMSi8vjMWPylXy-ShZ3TxgY";
+  readonly VAPID_PUBLIC_KEY = "BH96yDe1Z47dMcoLQ5Ysq5QQz-eJwBawmun3yjUF7xk7nTvkLMasWkeT94Qk59JrLN_emQrTPdV6MOjeK7sF00o";
   constructor(private swUpdate: SwUpdate,
     private swPush: SwPush,
     private newsletterService: NewsletterService
@@ -47,7 +47,7 @@ console.log(event);
       });
       
   }
-  /*
+  
   if(this.swPush.isEnabled){
   this.swPush.requestSubscription({
     serverPublicKey: this.VAPID_PUBLIC_KEY
@@ -55,7 +55,7 @@ console.log(event);
 .then(sub => 
   {
     console.log('inside subscription',sub);
-    */
+    
     /*
      this.newsletterService.addPushSubscriber(sub).subscribe(subValue=>{
        console.log("subscribe successfully",subValue)
@@ -80,9 +80,8 @@ console.log(event);
 .then(sub => 
 
   {
-    console.log('Notification subscription details',JSON.stringify(sub));
-    console.log('Notification subscription endpoint',sub.endpoint);
-    
+    console.log('Notification subscription',sub);
+    /*
      this.newsletterService.addPushSubscriber(sub).subscribe(subValue=>{
        console.log("subscribe successfully",subValue)
      },
@@ -90,7 +89,7 @@ console.log(event);
       console.log(error);
     })
   
-   
+   */ 
    
   })
 .catch(err => console.error("Could not subscribe to notifications", err));
